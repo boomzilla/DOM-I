@@ -43,3 +43,6 @@ logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 let codesnip = document.getElementById("cta-img");
 codesnip.setAttribute('src', siteContent["cta"]["img-src"])
+
+let midPageAccent = document.getElementById("middle-img");
+midPageAccent.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
