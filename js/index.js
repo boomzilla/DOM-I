@@ -46,3 +46,11 @@ codesnip.setAttribute('src', siteContent["cta"]["img-src"])
 
 let midPageAccent = document.getElementById("middle-img");
 midPageAccent.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+//anchor tags in the top nav
+let topLinks = document.getElementsByTagName("a");
+for (let n = 0; n < topLinks.length; n++) {
+  elem = topLinks[n];
+  thisNavItem = "nav-item-"+(n+1);
+  elem.textContent = siteContent["nav"][`${thisNavItem}`];
+}
