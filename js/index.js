@@ -91,3 +91,18 @@ for (let n = 0; n < smallHeaders.length; n++){
 
   elem.textContent = siteContent[thisSection][thisHeaderItem];
 }
+
+let paragraphs = document.getElementsByTagName("p");
+for (let n = 0; n < paragraphs.length; n++){
+  let elem = paragraphs[n];
+  let thisParaItem;
+  let thisSection;
+
+  let paraMap = ["features-content","about-content","services-content","product-content","vision-content","address","phone","email","copyright"];
+  let paraSectionMap = ["main-content","main-content","main-content","main-content","main-content","contact","contact","contact","footer"];
+
+  thisParaItem = paraMap[n];
+  thisSection = paraSectionMap[n];
+
+  elem.textContent = siteContent[thisSection][thisParaItem];
+}
