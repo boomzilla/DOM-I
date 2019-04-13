@@ -50,7 +50,44 @@ midPageAccent.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 //anchor tags in the top nav
 let topLinks = document.getElementsByTagName("a");
 for (let n = 0; n < topLinks.length; n++) {
-  elem = topLinks[n];
-  thisNavItem = "nav-item-"+(n+1);
+  let elem = topLinks[n];
+  let thisNavItem = "nav-item-"+(n+1);
   elem.textContent = siteContent["nav"][`${thisNavItem}`];
+}
+
+//cta tags
+let bigHeaders = document.getElementsByTagName("h1");
+bigHeaders[0].textContent = siteContent["cta"]["h1"];
+let buttons = document.getElementsByTagName("button");
+let wutTest = "cta";
+buttons[0].textContent = siteContent[wutTest]["button"];
+
+//main content, contact, and footer
+let smallHeaders = document.getElementsByTagName("h4");
+for (let n = 0; n < smallHeaders.length; n++){
+  let elem = smallHeaders[n];
+  let thisHeaderItem;
+  let thisSection;
+
+  //my strategy here is so stupid, but I just want to get it done
+  if (n == 0){
+    thisHeaderItem = "features-h4";
+  } else if (n == 1) {
+    thisHeaderItem = "about-h4";
+  } else if (n == 2) {
+    thisHeaderItem = "services-h4";
+  } else if (n == 3) {
+    thisHeaderItem = "product-h4";
+  } else if (n == 4) {
+    thisHeaderItem = "vision-h4";
+  } else {
+    thisHeaderItem = "contact-h4";
+    thisSection = "contact";
+  }
+
+  if (n < 5) {
+    thisSection = "main-content";
+  }
+
+  elem.textContent = siteContent[thisSection][thisHeaderItem];
 }
